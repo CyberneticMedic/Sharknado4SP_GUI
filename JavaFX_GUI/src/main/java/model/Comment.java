@@ -44,7 +44,7 @@ public class Comment {
     }
 
     public boolean makeComment(String comment, User user) {///////
-        if (user == null || comment == null || comment == ' ') {
+        if (user == null || comment == null || comment == "") {
             return false;
         } 
         Comment newComment = new Comment(comment, user, new Date());

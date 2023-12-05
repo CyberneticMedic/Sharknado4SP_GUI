@@ -47,11 +47,11 @@ public class Project {
     return true;
   }
   private boolean columnExists(String columnName) {
-    if (columnName == ' ' || columnName == null) {
+    if (columnName == "" || columnName == null) {
       return false;
     }
-    for (Columc c : columns) {
-      if (c.getName.equalsIgnoreCase(columnName)) {
+    for (Column c : columns) {
+      if (c.getName().equalsIgnoreCase(columnName)) {
         return true;
       }
     }
@@ -69,7 +69,7 @@ public class Project {
   }
 
   public boolean renameColumn(String column, String rename) {
-    if (column == null || rename == null || column == ' ' || rename == ' ') {
+    if (column == null || rename == null || column == "" || rename == "") {
       return false;
     }
     for (Column c : columns) {
@@ -109,9 +109,9 @@ public class Project {
     }
 
     if (temp == null || !exists) {
-      return "Task or Column not found";
+      return false;
     }
-    return "Task moved to destination column";
+    return true;
   }
 
   public Column getColumn(String name){

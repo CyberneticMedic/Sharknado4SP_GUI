@@ -99,7 +99,7 @@ public class Column {
     }
 
     public boolean setName(String rename) {
-        if (rename == ' ' || rename == null) {
+        if (rename == "" || rename == null) {
             return false;
         }
         this.name = rename;

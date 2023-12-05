@@ -308,15 +308,15 @@ public class ProjectSystemFACADE {
         return task;
     }
 
-    public String moveTask() {
+    public boolean moveTask() {
         return project.moveTask("Project Backlog", "Curve the metal to make a cylindrical shape", "Doing");
     }
 
-    public String moveTask(int num) {
+    public boolean moveTask(int num) {
         return project.moveTask("Project Backlog", "Make impossible burger possible", "Abandoned");
     }
 
-    public String addColumn(String title) {
+    public boolean addColumn(String title) {
         return project.addColumn(title);
     }
 
