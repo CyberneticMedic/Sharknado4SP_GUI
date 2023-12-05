@@ -19,9 +19,9 @@
       <Label alignment="TOP_LEFT" layoutX="91.0" layoutY="219.0" text="Message" textFill="#4195d4" />
       <TextField fx:id="txt_first_name" layoutX="91.0" layoutY="114.0" />
       <TextField fx:id="txt_last_name" layoutX="316.0" layoutY="114.0" />
-      <TextField fx:id="txt_email" layoutX="92.0" layoutY="171.0" prefHeight="25.0" prefWidth="397.0" />
-      <TextField fx:id="txt_message" layoutX="92.0" layoutY="236.0" prefHeight="87.0" prefWidth="397.0" text=" " />
-      <Button layoutX="90.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#btnSignupClicked" prefHeight="25.0" prefWidth="397.0" style="-fx-background-color: #4195D4;" text="Send Message" textFill="WHITE" />
+      <TextField fx:id="txt_message" layoutX="92.0" layoutY="236.0" prefHeight="87.0" prefWidth="378.0" text=" " />
+      <Button layoutX="90.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#btnSignupClicked" prefHeight="25.0" prefWidth="378.0" style="-fx-background-color: #4195D4;" text="Send Message" textFill="WHITE" />
+      <TextField fx:id="txt_first_name1" layoutX="91.0" layoutY="171.0" prefHeight="25.0" prefWidth="378.0" />
       
    </children>
 </AnchorPane>
