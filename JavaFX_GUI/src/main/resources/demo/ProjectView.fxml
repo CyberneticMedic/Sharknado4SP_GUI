@@ -27,11 +27,11 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="112.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="362.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="612.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
-      <Button layoutX="200.0" layoutY="16.0" mnemonicParsing="false" text="My Work" />
-      <Button layoutX="452.0" layoutY="16.0" mnemonicParsing="false" text="Projects" />
-      <Button layoutX="687.0" layoutY="16.0" mnemonicParsing="false" text="Leaderboard" />
-      <Button layoutX="1010.0" layoutY="28.0" mnemonicParsing="false" text="Contact us" />
-      <Button layoutX="903.0" layoutY="28.0" mnemonicParsing="false" text="Home" />
+      <Button fx:id="ButtonMyWork" layoutX="200.0" layoutY="16.0" mnemonicParsing="false" onAction="#openMyWork" text="My Work" />
+      <Button fx:id="ButtonProjects" layoutX="452.0" layoutY="16.0" mnemonicParsing="false" onAction="#openProjectListView" text="Projects" />
+      <Button fx:id="ButtonLeaderboard" layoutX="687.0" layoutY="16.0" mnemonicParsing="false" onAction="#openLeaderboard" text="Leaderboard" />
+      <Button fx:id="ButtonContactUs" layoutX="1010.0" layoutY="28.0" mnemonicParsing="false" onAction="#gotoContactUs" text="Contact us" />
+      <Button fx:id="ButtonHome" layoutX="903.0" layoutY="28.0" mnemonicParsing="false" onAction="#goHome" text="Home" />
       <Button fx:id="ButtonProfile" layoutX="1152.0" layoutY="28.0" mnemonicParsing="false" onAction="#getUserProfile" text="Profile" />
       <ImageView fitHeight="113.0" fitWidth="113.0">
          <image>
@@ -50,10 +50,10 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="156.0" layoutY="684.0" mnemonicParsing="false" text="Add Task" />
+      <Button fx:id="ButtonAddTaskBacklog" layoutX="156.0" layoutY="684.0" mnemonicParsing="false" onAction="#AddTaskBacklog" text="Add Task" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="493.0" layoutX="959.0" layoutY="228.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="241.0" />
-      <Button layoutX="1041.0" layoutY="684.0" mnemonicParsing="false" text="Add Task" />
-      <Button layoutX="744.0" layoutY="684.0" mnemonicParsing="false" text="Add Task" />
+      <Button fx:id="ButtonDone" layoutX="1041.0" layoutY="684.0" mnemonicParsing="false" onAction="#addTaskToDone" text="Add Task" />
+      <Button fx:id="ButtonInProgress" layoutX="744.0" layoutY="684.0" mnemonicParsing="false" onAction="#AddTaskInProgress" text="Add Task" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="493.0" layoutX="365.0" layoutY="228.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="241.0" />
       <Text fill="WHITE" layoutX="1048.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Done">
          <font>
@@ -65,6 +65,6 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="447.0" layoutY="684.0" mnemonicParsing="false" text="Add Task" />
+      <Button fx:id="ButtonToDo" layoutX="447.0" layoutY="684.0" mnemonicParsing="false" onAction="#AddTaskToDo" text="Add Task" />
    </children>
 </Pane>

@@ -34,12 +34,12 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="112.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="362.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="612.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
-      <Button layoutX="200.0" layoutY="16.0" mnemonicParsing="false" text="My Work" />
-      <Button layoutX="452.0" layoutY="16.0" mnemonicParsing="false" text="Projects" />
-      <Button layoutX="687.0" layoutY="16.0" mnemonicParsing="false" text="Leaderboard" />
-      <Button layoutX="1010.0" layoutY="28.0" mnemonicParsing="false" text="Contact us" />
-      <Button layoutX="903.0" layoutY="28.0" mnemonicParsing="false" text="Home" />
-      <Button layoutX="1152.0" layoutY="28.0" mnemonicParsing="false" text="Profile" />
+      <Button fx:id="ButtonMyWork" layoutX="200.0" layoutY="16.0" mnemonicParsing="false" onAction="#gotoMyWork" text="My Work" />
+      <Button fx:id="ButtonProjects" layoutX="452.0" layoutY="16.0" mnemonicParsing="false" onAction="#gotoProjectListView" text="Projects" />
+      <Button fx:id="ButtonLeaderboard" layoutX="687.0" layoutY="16.0" mnemonicParsing="false" onAction="#gotoLeaderboard" text="Leaderboard" />
+      <Button fx:id="ButtonContactUs" layoutX="1010.0" layoutY="28.0" mnemonicParsing="false" onAction="#gotoContactUs" text="Contact us" />
+      <Button fx:id="ButtonHome" layoutX="903.0" layoutY="28.0" mnemonicParsing="false" onAction="#gotoHome" text="Home" />
+      <Button fx:id="ButtonProfile" layoutX="1152.0" layoutY="28.0" mnemonicParsing="false" onAction="#gotoProfile" text="Profile" />
       <ImageView fitHeight="113.0" fitWidth="113.0">
          <image>
             <Image url="@../../../../../../Logo.png" />
