@@ -21,7 +21,8 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
-
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ArrayList;
 
 public class ProjectViewController implements Initializable{
@@ -115,11 +116,14 @@ public class ProjectViewController implements Initializable{
                         ClipboardContent content = new ClipboardContent();
                         content.putString(aLabel.getText());
                         db.setContent(content);
-
+                        draggedTask = taskLabels.get(aLabel);
                         event.consume();
                     }
                 });
     } 
+    public Task draggedTask;
+    public Map<VBox, Column> columnBoxes = new HashMap<>();
+    public Map<Label, Task> taskLabels = new HashMap<>();
    
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -128,10 +132,13 @@ public class ProjectViewController implements Initializable{
         User user = facade.getUser();
         Project project = facade.getProjectByName("Electric Missiles");//implement
         ArrayList<Column> columns = project.getColumns();
+        columnBoxes = new HashMap<>();
+        taskLabels = new HashMap<>();
 
         for(Column column : columns){
             System.out.println("Column " + column);
             VBox columnBox = new VBox();
+            columnBoxes.put(columnBox, column);
             columnBox.getStyleClass().add("column");
             columnBox.setPadding(new Insets(10,10,10,10));
             columnBox.setAlignment(Pos.TOP_CENTER);
@@ -154,10 +161,14 @@ public class ProjectViewController implements Initializable{
                         aLabel.setWrapText(true);
                         aLabel.setText(db.getString());
                         columnBox.getChildren().add(aLabel);
+                        columnBoxes.get(columnBox).addTask(draggedTask);
+                        DataWriter.saveProjects();
                         aLabel.setOnDragDone(new EventHandler<DragEvent>() {
                             public void handle(DragEvent event){
                                 if(event.getTransferMode() == TransferMode.MOVE){
                                     columnBox.getChildren().remove(aLabel);
+                                    columnBoxes.get(columnBox).removeTask(taskLabels.get(aLabel));
+                                    DataWriter.saveProjects();
                                 }
                                  event.consume();
                             }
@@ -184,6 +195,8 @@ public class ProjectViewController implements Initializable{
         
         for(Task task : tasks){
         	Label taskLabel = new Label();
+            taskLabels.put(taskLabel, task);
+            System.out.println(taskLabels.get(taskLabel).getTitle());
         	taskLabel.setWrapText(true);
         	taskLabel.setText(task.getTitle());
         	columnBox.getChildren().add(taskLabel);
@@ -192,7 +205,9 @@ public class ProjectViewController implements Initializable{
                 public void handle(DragEvent event){
                     if(event.getTransferMode() == TransferMode.MOVE){
                         columnBox.getChildren().remove(taskLabel);
-                        }
+                        columnBoxes.get(columnBox).removeTask(taskLabels.get(taskLabel));
+                        DataWriter.saveProjects();
+                    }
 
                         event.consume();
                     }
